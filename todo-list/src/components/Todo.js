@@ -4,8 +4,6 @@ const Todo = ({ text, todo, setTodos, todos }) => {
 
     const deleteHandler = () => {
         setTodos(todos.filter((el) => el.id !== todo.id))
-        // it'll tell me the exact element that we're on
-        //console.log(todo)
     }
 
     const completeHandler = () => {

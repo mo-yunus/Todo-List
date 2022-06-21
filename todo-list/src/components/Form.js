@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 } from "uuid"
 
-const Form = ({ todos, setTodos, inputText, setInputText }) => {
+const Form = ({ todos, setTodos, inputText, setInputText, setStatus }) => {
 
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
@@ -15,6 +15,10 @@ const Form = ({ todos, setTodos, inputText, setInputText }) => {
         setInputText("");
     }
 
+    const statusHandler = (e) => {
+        setStatus(e.target.value);
+    }
+
     return (
         <div>
             <form >
@@ -23,7 +27,7 @@ const Form = ({ todos, setTodos, inputText, setInputText }) => {
                     <i className='fas fa-plus-square'></i>
                 </button>
                 <div className='select'>
-                    <select name="todos" className='filter-todo'>
+                    <select onChange={statusHandler} name="todos" className='filter-todo'>
                         <option value="all">All</option>
                         <option value="completed">Completed</option>
                         <option value="uncompleted">Umcompleted</option>
